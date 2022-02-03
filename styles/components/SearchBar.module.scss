@@ -1,0 +1,30 @@
+@use "../global/variables.scss";
+@use "../global/mixins.scss";
+
+.searchBar {
+    position: relative;
+}
+
+.searchBarInput {
+    @include mixins.appearance;
+    height: 2.5rem;
+    width: 100%;
+    background-color: variables.$secondary-color;
+    font-size: 1rem;
+    padding: 0 1rem;
+}
+
+.searchBarButton {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 3rem;
+    right: 0;
+    height: 100%;
+}
+
+.searchBarButtonIcon {
+    height: 1rem;
+    width: 1rem;
+}

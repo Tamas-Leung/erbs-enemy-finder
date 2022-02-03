@@ -1,0 +1,13 @@
+@use "../global/variables.scss";
+
+.title {
+    padding: 1rem 0rem 1rem 0rem;
+}
+
+.subtitle {
+    padding: 1rem 0rem 1rem 0rem;
+}
+
+.red {
+    color: variables.$accent;
+}

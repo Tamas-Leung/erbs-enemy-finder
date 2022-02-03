@@ -1,0 +1,78 @@
+@use "../global/variables.scss";
+
+.container {
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+}
+
+.red {
+    color: variables.$accent;
+}
+
+.main {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.update_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.update_button {
+    border: 2px solid variables.$accent;
+    background-color: variables.$secondary-color;
+    padding: 10px 14px;
+    font-weight: 700;
+}
+
+.last_update {
+    font-size: 0.8rem;
+}
+
+.rival_card {
+    background-color: variables.$secondary-color;
+    margin-top: 1rem;
+    min-width: 15rem;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.5rem 0rem;
+}
+
+.rivals_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.show_more_continer {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.show_more {
+    border: 2px solid variables.$accent;
+    background-color: variables.$secondary-color;
+    padding: 10px 14px;
+    font-weight: 700;
+}
+
+.game_dates_container {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.game_dates {
+    font-size: 0.8rem;
+}
+
+.no_games_found {
+    margin-top: 1rem;
+    text-align: center;
+}
