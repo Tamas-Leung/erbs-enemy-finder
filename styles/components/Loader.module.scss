@@ -1,0 +1,99 @@
+@use "../global/variables.scss";
+
+.loader {
+    position: relative;
+
+    animation: loader 1s infinite linear;
+    height: 1rem;
+    width: 10px;
+    background-color: variables.$accent;
+    color: variables.$accent;
+
+    &::before,
+    &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        height: 100%;
+        width: 10px;
+        background-color: variables.$accent;
+        color: variables.$accent;
+        top: 0;
+    }
+
+    &::before {
+        left: -110%;
+        animation: loader-before 1s infinite linear;
+    }
+
+    &::after {
+        left: 110%;
+        animation: loader-after 1s infinite linear;
+    }
+}
+
+@keyframes loader-before {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    25% {
+        transform: scale(1, 1.5);
+    }
+
+    50% {
+        transform: scale(1, 0.67);
+    }
+
+    75% {
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes loader {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    25% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1, 1.5);
+    }
+
+    75% {
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes loader-after {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    25% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1, 0.67);
+    }
+
+    75% {
+        transform: scale(1, 1.5);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
