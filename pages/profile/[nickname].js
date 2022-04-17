@@ -8,6 +8,8 @@ import Loader from "../../components/Loader";
 import RivalsList from "../../components/RivalsList";
 import Image from "next/image";
 
+const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+
 const Profile = ({
     userExists,
     rivals_data,
@@ -28,22 +30,24 @@ const Profile = ({
     const [isUpdating, setIsUpdating] = useState(false);
     const [currentCharacter, setCurrentCharacter] = useState(null);
 
+    
+
     useEffect(() => {
         if (start_date) {
             let startDate = new Date(start_date);
-            setStartDate(startDate.toLocaleDateString());
+            setStartDate(startDate.toLocaleDateString(undefined, dateOptions));
         } else {
             setStartDate(null);
         }
         if (end_date) {
             let endDate = new Date(end_date);
-            setEndDate(endDate.toLocaleDateString());
+            setEndDate(endDate.toLocaleDateString(undefined, dateOptions));
         } else {
             setEndDate(null);
         }
         if (update_date) {
             let updateDate = new Date(update_date);
-            setUpdateDate(updateDate.toLocaleDateString());
+            setUpdateDate(updateDate.toLocaleDateString(undefined, dateOptions));
         } else {
             setUpdateDate(null);
         }
