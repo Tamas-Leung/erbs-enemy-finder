@@ -66,8 +66,13 @@ const Profile = ({
         setIsUpdating(true);
 
         const result = await fetch(
-            `http://localhost:8888/api/profile/${nickname}/update`
+            `${process.env.NEXT_PUBLIC_BACKEND_ROUTE}/api/profile/${nickname}/update`
         );
+
+        if (result.status == 404) {
+            alert("ERROR: Backend Missing, Try Again Later");
+            setIsUpdating(false);
+        }
 
         const data = await result.json();
 
@@ -111,7 +116,7 @@ const Profile = ({
                                 )}
                             </div>
                             <h1>{nickname}</h1>
-                            {gameCount && (
+                            {(gameCount > 0) && (
                                 <h3>
                                     <span className={styles.red}>
                                         {gameCount}
@@ -167,11 +172,10 @@ Profile.getLayout = function getLayout(page) {
 export const getServerSideProps = async ({ params, res }) => {
     const { nickname } = params;
 
-    const result = await fetch(`http://localhost:8888/api/profile/${nickname}`);
+    const result = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ROUTE}/api/profile/${nickname}`);
 
     const data = await result.json();
 
-    console.log(data);
     if (!result.ok) {
         return {
             props: {

@@ -39,7 +39,7 @@ const RivalsBox = ({ rival }) => {
     useEffect(() => {
         const fetchData = async () => {
             const result = await fetch(
-                `http://localhost:8888/api/profile/short/${rival.userNum}`
+                `${process.env.NEXT_PUBLIC_BACKEND_ROUTE}/api/profile/short/${rival.userNum}`
             );
 
             const data = await result.json();
