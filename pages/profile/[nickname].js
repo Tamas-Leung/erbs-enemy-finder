@@ -5,7 +5,7 @@ import styles from "../../styles/components/Profile.module.scss";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Loader from "../../components/Loader";
-import { RivalsList } from "./RivalsList";
+import RivalsList from "../../components/RivalsList";
 import Image from "next/image";
 
 const Profile = ({

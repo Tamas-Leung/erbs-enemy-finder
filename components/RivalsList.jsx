@@ -1,8 +1,8 @@
-import styles from "../../styles/components/RivalsList.module.scss";
+import styles from "../styles/components/RivalsList.module.scss";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-export const RivalsList = ({ rivalsList }) => {
+const RivalsList = ({ rivalsList }) => {
     const [amountShown, setAmountShown] = useState(5);
 
     const increaseAmountShown = async () => {
@@ -90,3 +90,5 @@ const RivalsBox = ({ rival }) => {
         </div>
     );
 };
+
+export default RivalsList;

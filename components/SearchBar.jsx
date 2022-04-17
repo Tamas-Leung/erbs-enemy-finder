@@ -11,7 +11,7 @@ const SearchBar = () => {
         const nickname = e.target.searchBarInput.value;
 
         if (nickname) router.push(`/profile/${nickname}`);
-    });
+    }, [router]);
 
     return (
         <form className={styles.searchBar} onSubmit={handleSubmit}>
